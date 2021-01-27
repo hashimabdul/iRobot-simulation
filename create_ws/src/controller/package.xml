@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>controller</name>
+  <version>0.0.1</version>
+  <description>
+    A controller designed to move the robot randomly in ros / gazebo world
+  </description>
+  <maintainer email="hashim@umich.edu">
+    Hashim Abdul
+  </maintainer>
+  <license>
+    The University of Michigan
+  </license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>roscpp</buildtool_depend>
+  <build_depend>geometry_msgs</build_depend>
+  
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <export>
+  </export>
+</package>

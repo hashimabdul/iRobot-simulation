@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(controller)
+find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs)
+catkin_package()
+include_directories(include ${catkin_INCLUDE_DIRS})
+add_executable(velocity_publisher pub_vel.cpp)
+target_link_libraries(velocity_publisher ${catkin_LIBRARIES})

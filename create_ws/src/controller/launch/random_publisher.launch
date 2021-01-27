@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="headless" default="false" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug"        value="false"/>
+    <arg name="verbose"      value="true" />
+    <arg name="gui"          value="true" />
+    <arg name="world_name"   value="worlds/willowgarage.world"/>
+ </include>
+
+  <!-- Call Create bot launch file and spawn the robot for Gazebo simulator -->
+  <include file="$(find create_description)/launch/create_2.launch">
+  </include>
+  <node name="spawn_create2" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model robot" />
+
+  <node name="controller" pkg="controller" type="velocity_publisher" output="screen"/>
+
+</launch>
